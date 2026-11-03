@@ -17,6 +17,10 @@ body {
         #0F0E0E;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 section {
     position: relative;
     min-height: 100vh;      
@@ -232,7 +236,7 @@ a, p, h1, h2, h3, div,  button, .menu {
 
 .p1 {
     font-family: 'IMFellEnglish', serif;
-    font-size: 22px;
+    font-size: clamp(12px, 5.6vw, 22px);
     color: #E8D5B5;
     white-space: nowrap;
     position: absolute;
@@ -415,7 +419,7 @@ a, p, h1, h2, h3, div,  button, .menu {
     top:17%;
     left: 0;
     right: 0;
-    width: fit-content; 
+    width: auto; 
     margin: 30px 10px; 
 }
 
@@ -435,7 +439,7 @@ a, p, h1, h2, h3, div,  button, .menu {
     color: #E8D5B5;
     font-size: 17px;
     margin-bottom: 10px;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .proc {
@@ -640,5 +644,16 @@ a, p, h1, h2, h3, div,  button, .menu {
 
     .navLinks {
         display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        padding: 10px 15px;
+        gap: 12px;
+    }
+
+    .box {
+        min-width: 70px;
     }
 }
