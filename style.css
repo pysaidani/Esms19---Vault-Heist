@@ -29,7 +29,7 @@ section {
 }
 
 #about {
-    min-height: 275vh;
+    min-height: 325vh;
 }
 
 a, p, h1, h2, h3, div,  button, .menu {
@@ -413,7 +413,7 @@ a, p, h1, h2, h3, div,  button, .menu {
 .objectives {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
     font-family: 'IMFellEnglish';
     position: absolute;
     top:17%;
@@ -545,12 +545,17 @@ a, p, h1, h2, h3, div,  button, .menu {
     flex-direction: column;
 }
 
+.procedure:hover {
+    border: 1px solid yellow;
+}
+
 .proc1 {
     top: 74%;
 }
 
 .proc2 {
-    top: 83%;
+    top: 74%;
+    margin-top: 200px;
 }
 
 .proc-header {
