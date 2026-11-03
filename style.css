@@ -37,11 +37,17 @@ a, p, h1, h2, h3, h4, h5, div, button {
     cursor: default;
 }
 
-@font-face { font-family: 'HarryP'; src: url('./fonts/harryP.TTF') format('truetype'); font-display: swap; }
-@font-face { font-family: 'IMFellEnglish'; src: url('./fonts/IMFellEnglish.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Cinzel'; src: url('./fonts/Cinzel-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { 
+    font-family: 'HarryP'; src: url('./fonts/harryP.TTF') format('truetype'); font-display: swap; 
+}
 
-/* ---------- shared ---------- */
+@font-face { 
+    font-family: 'IMFellEnglish'; src: url('./fonts/IMFellEnglish.ttf') format('truetype'); font-display: swap; 
+}
+
+@font-face { 
+    font-family: 'Cinzel'; src: url('./fonts/Cinzel-Regular.ttf') format('truetype'); font-display: swap; 
+}
 
 .center {
     font-family: 'HarryP', sans-serif;
@@ -86,8 +92,6 @@ a, p, h1, h2, h3, h4, h5, div, button {
 .regPc {
     display: none;
 }
-
-/* ---------- navbar ---------- */
 
 .navBar {
     position: fixed;
@@ -156,8 +160,6 @@ a, p, h1, h2, h3, h4, h5, div, button {
     text-decoration-thickness: 2px;
 }
 
-/* ---------- mobile menu ---------- */
-
 .menu {
     display: none;
     position: fixed;
@@ -203,7 +205,7 @@ a, p, h1, h2, h3, h4, h5, div, button {
     100% { top: -100%; }
 }
 
-/* ---------- home ---------- */
+/* ================================= home =============================== */
 
 #home {
     display: flex;
@@ -328,13 +330,11 @@ a, p, h1, h2, h3, h4, h5, div, button {
     height: 24px;
 }
 
-/* ---------- separator (lines, rings, pitch, checker band) ---------- */
-
 .separation {
     position: relative;
     width: fit-content;
     margin-inline: auto;
-    margin-top: calc(min(100vw, 400px) * 0.28);   /* room for the pitch scene */
+    margin-top: calc(min(100vw, 400px) * 0.28);   
 }
 
 .rings {
@@ -379,11 +379,16 @@ a, p, h1, h2, h3, h4, h5, div, button {
     pointer-events: none;
 }
 
-/* ---------- about ---------- */
+/* ================================= about ============================== */
 
 #about {
     padding: calc(var(--nav-h) + 60px) 20px 110px;
 }
+
+.pres, .objs, .proc {
+    font-size: clamp(26px, 8vw, 48px);
+}
+
 
 .aboutWrap {
     max-width: 1000px;
@@ -393,8 +398,8 @@ a, p, h1, h2, h3, h4, h5, div, button {
     gap: clamp(20px, 4vh, 40px);
 }
 
-.pres, .objs, .proc {
-    font-size: clamp(26px, 8vw, 48px);
+.pres {
+    margin-top: 0;
 }
 
 .presentation {
@@ -482,8 +487,9 @@ a, p, h1, h2, h3, h4, h5, div, button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    grid-auto-flow: column;       /* cards 1-2 left, 3-4 right */
+    grid-auto-flow: column;      
     gap: 12px;
+    padding-bottom: 50px;
 }
 
 .phase {
@@ -496,6 +502,11 @@ a, p, h1, h2, h3, h4, h5, div, button {
 
 .phase:hover {
     border-color: red;
+}
+
+.phase:nth-child(3),
+.phase:nth-child(4) {
+    transform: translateY(50px); 
 }
 
 .phase p {
@@ -585,7 +596,7 @@ a, p, h1, h2, h3, h4, h5, div, button {
     font-family: 'Cinzel', serif;
 }
 
-/* ---------- agenda ---------- */
+/* =============================== agenda =============================== */
 
 #agenda {
     padding: calc(var(--nav-h) + 40px) 20px 60px;
@@ -601,8 +612,6 @@ a, p, h1, h2, h3, h4, h5, div, button {
     line-height: 1.5;
 }
 
-/* ---------- small phones ---------- */
-
 @media (max-width: 359px) {
     .phaseGrid {
         grid-template-columns: 1fr;
@@ -611,12 +620,18 @@ a, p, h1, h2, h3, h4, h5, div, button {
     }
 }
 
-/* ---------- tablet and desktop ---------- */
-
 @media (min-width: 769px) {
-    .menuIcon { display: none; }
+    #about {
+        padding-top: 40px;
+    }
 
-    .navLinks { display: flex; }
+    .menuIcon { 
+        display: none; 
+    }
+
+    .navLinks { 
+        display: flex; 
+    }
 
     .regPc {
         display: flex;
@@ -637,42 +652,113 @@ a, p, h1, h2, h3, h4, h5, div, button {
         font-size: 20px;
     }
 
-    .pitch,
+    .tagline {
+        font-size: clamp(15px, 2.8vw, 150px);
+    }
+
+    .pitch, 
     .separation::after {
         display: none;
     }
 
     .separation {
-        margin-top: 28px;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin: 0;
+        transform: translate(-50%, 50%);
+    }
+
+    .pres, .objs, .proc {
+        font-size: clamp(26px, 8vw, 70px);
+    }
+
+    .presentation {
+        font-size: clamp(26px, 2vw, 70px);
+        padding: 40px;
     }
 
     .objectives {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .h5 {
+        font-size: clamp(15px, 2vw, 35px);
+    }
+
+    .p7 {
+        font-size: clamp(15px, 1.6vw, 30px);
+    }
+
+    .p8 {
+        font-size: clamp(30px, 2vw, 45px);
+    }
+
+    .p9 {
+        font-size: clamp(25px, 1.6vw, 30px);
+    }
+
     .phaseGrid {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
+        grid-template-rows: 1;
         grid-auto-flow: row;
+        align-items: stretch;
+        position: relative;
+        gap: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-bottom: 100px;
     }
 
-    .p7 { font-size: 18px; }
-    .phase p { font-size: 15px; }
-}
+    .h6 {
+        font-size: clamp(15px, 1.7vw, 35px);
+    }
 
-@media (min-width: 900px) {
+    .phase {
+       max-width: 20vw;
+    }
+
+    .phase p { 
+        font-size: clamp(15px, 1.6vw, 30px);
+    }
+
+    .phase:nth-child(3) {
+        transform: translateY(0px);
+    }
+
+    .phase:nth-child(2),
+    .phase:nth-child(4) {
+        transform: translateY(100px);
+    }
+
     .procGrid {
-        grid-template-columns: 1fr 1fr;
+        justify-items: center;
     }
-}
 
-/* side scenes only when there is real room beside the content */
-@media (min-width: 1100px) {
+    .procedure {
+        max-width: 57vw;
+        width: 100%;
+    }
+
+    .proc-text, .h7 {
+        font-size: clamp(15px, 2vw, 25px);
+    }
+
+    .proc-header h6 {
+        font-size: clamp(15px, 2vw, 60px);
+    }
+
     .scene {
         display: block;
     }
 
     .desc {
-        max-width: min(900px, 52vw);
+        max-width: min(900px, 55vw);
+        font-size: clamp(15px, 2vw, 45px);
     }
+
+}
+
+@media (min-width: 1100px) {
+    
 }
