@@ -1,0 +1,130 @@
+@import url('https://fonts.cdnfonts.com/css/harry-p');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(100deg, #380108, #5A1F02),
+              linear-gradient(100deg, #710814, #ffd57499),
+              #0F0E0E; 
+  margin: 0;
+  padding: 40px;
+  min-height: 100vh;
+  font-family: 'IM Fell English', serif;
+  color: #F4E9CD;
+}
+
+.back-btn {
+  display: inline-block; 
+  text-decoration: none; 
+  width: fit-content; 
+  color: #D3A63A;
+  font-family: 'IM Fell English', serif; 
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  background: linear-gradient(to right, #B70F24 0%, #840B1A 50%, #B70F24 100%);
+  border: 1px solid #D3A63A;
+  border-radius: 50px;
+  padding: 12px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 0 20px 20px;
+}
+
+.back-btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.day-title {
+  color: #F4E9CD;
+  font-family: "Harry P", serif; 
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 100%; 
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 20px 0 40px 0;
+  text-shadow: 0 0 15px rgba(217, 167, 54, 0.4); 
+}
+
+.agenda-box {
+  background-color: #493326;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin: 0 auto 100px auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid #5A3E2F;
+}
+
+.line {
+  background-color: #B09C85;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px 8px 8px; 
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.2s;
+}
+
+.line:hover {
+  background-color: #C2AD96;
+}
+
+.time {
+  background-color: #840B1A;
+  color: #D3A63A;
+  font-family: 'Cinzel', serif; 
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: 1px solid #D3A63A;
+  border-radius: 6px;
+  padding: 10px 15px;
+  min-width: 110px; 
+  width: 110px;
+  flex-shrink: 0; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.activity {
+  color: #2E140B;
+  font-family: 'IM Fell English', serif; 
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0 0 0 20px;
+  text-align: left;
+}
+
+.separation {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.divider-line {
+    flex: 1; 
+    height: 1px;
+    background-color: #ffffff; /* The line color */
+    border: none; /* Removes any accidental borders */
+    padding: 0; /* Removes any accidental padding */
+    margin: 0;
+}
+
+.rings {
+    width: 150px; /* Adjust the size of your rings image */
+    height: auto;
+    margin: 0 20px; /* Adds space between the image and the lines */
+    flex-shrink: 0; /* Prevents the image from squishing */
+}
