@@ -379,7 +379,7 @@ a, p, h1, h2, h3, h4, h5, div, button {
     pointer-events: none;
 }
 
-/* ================================= about ============================== */
+/* ================================= about ============================= */
 
 #about {
     padding: calc(var(--nav-h) + 60px) 20px 110px;
@@ -411,12 +411,14 @@ a, p, h1, h2, h3, h4, h5, div, button {
     line-height: 1.4;
     padding: 20px;
     border-radius: 10px;
-    border: 4px solid rgb(250, 170, 10);
-    transition: border-color .3s;
+    border: 4px solid rgb(255, 0, 0) ;
+    transition: .5s;
 }
 
 .presentation:hover {
-    border-color: rgb(255, 0, 0);
+    border-color: rgb(250, 170, 10);
+    background: rgba(51, 19, 1, 0.9);
+    color: rgb(249, 197, 83);
 }
 
 .p6 {
@@ -426,6 +428,8 @@ a, p, h1, h2, h3, h4, h5, div, button {
 .objectives {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 1fr;  
     gap: 12px;
     font-family: 'IMFellEnglish', serif;
 }
@@ -488,7 +492,9 @@ a, p, h1, h2, h3, h4, h5, div, button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    grid-auto-flow: column;      
+    grid-auto-flow: column;     
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr; 
     gap: 12px;
     padding-bottom: 50px;
 }
@@ -622,7 +628,8 @@ a, p, h1, h2, h3, h4, h5, div, button {
 }
 
 @media (min-width: 769px) {
-    #about {
+
+    #about, #agenda {
         padding-top: 40px;
     }
 
@@ -701,22 +708,16 @@ a, p, h1, h2, h3, h4, h5, div, button {
 
     .phaseGrid {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-auto-flow: row;
         align-items: stretch;
         position: relative;
         gap: 10px;
-        left: 50%;
-        transform: translateX(-50%);
         padding-bottom: 100px;
     }
 
     .h6 {
         font-size: clamp(15px, 1.7vw, 35px);
-    }
-
-    .phase {
-       max-width: 20vw;
     }
 
     .phase p { 
